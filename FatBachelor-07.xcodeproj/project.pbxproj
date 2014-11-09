@@ -14,6 +14,13 @@
 		8C93608A1A0FF0D300CBD215 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C9360891A0FF0D300CBD215 /* Images.xcassets */; };
 		8C93608D1A0FF0D300CBD215 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C93608B1A0FF0D300CBD215 /* LaunchScreen.xib */; };
 		8C9360991A0FF0D300CBD215 /* FatBachelor_07Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9360981A0FF0D300CBD215 /* FatBachelor_07Tests.m */; };
+		8C9360AA1A10052000CBD215 /* Day.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9360A91A10052000CBD215 /* Day.m */; };
+		8C9360AD1A10052800CBD215 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9360AC1A10052800CBD215 /* User.m */; };
+		8C9360B01A10054A00CBD215 /* CustomTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9360AF1A10054A00CBD215 /* CustomTableViewCell.m */; };
+		8C9360B31A10056E00CBD215 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9360B21A10056E00CBD215 /* MainViewController.m */; };
+		8C9360B61A10059600CBD215 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9360B51A10059600CBD215 /* TableViewController.m */; };
+		8C9360B91A1005B100CBD215 /* CalorieDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9360B81A1005B100CBD215 /* CalorieDataSource.m */; };
+		8C9360BC1A1005C000CBD215 /* BudgetDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C9360BB1A1005C000CBD215 /* BudgetDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +47,20 @@
 		8C9360921A0FF0D300CBD215 /* FatBachelor-07Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FatBachelor-07Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C9360971A0FF0D300CBD215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8C9360981A0FF0D300CBD215 /* FatBachelor_07Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FatBachelor_07Tests.m; sourceTree = "<group>"; };
+		8C9360A81A10052000CBD215 /* Day.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Day.h; sourceTree = "<group>"; };
+		8C9360A91A10052000CBD215 /* Day.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Day.m; sourceTree = "<group>"; };
+		8C9360AB1A10052800CBD215 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		8C9360AC1A10052800CBD215 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		8C9360AE1A10054A00CBD215 /* CustomTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomTableViewCell.h; sourceTree = "<group>"; };
+		8C9360AF1A10054A00CBD215 /* CustomTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomTableViewCell.m; sourceTree = "<group>"; };
+		8C9360B11A10056E00CBD215 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		8C9360B21A10056E00CBD215 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		8C9360B41A10059600CBD215 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		8C9360B51A10059600CBD215 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		8C9360B71A1005B100CBD215 /* CalorieDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalorieDataSource.h; sourceTree = "<group>"; };
+		8C9360B81A1005B100CBD215 /* CalorieDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalorieDataSource.m; sourceTree = "<group>"; };
+		8C9360BA1A1005C000CBD215 /* BudgetDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BudgetDataSource.h; sourceTree = "<group>"; };
+		8C9360BB1A1005C000CBD215 /* BudgetDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BudgetDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +102,8 @@
 		8C93607B1A0FF0D300CBD215 /* FatBachelor-07 */ = {
 			isa = PBXGroup;
 			children = (
+				8C9360A21A1004B500CBD215 /* Models */,
+				8C9360A51A1004D600CBD215 /* Views */,
 				8C9360801A0FF0D300CBD215 /* AppDelegate.h */,
 				8C9360811A0FF0D300CBD215 /* AppDelegate.m */,
 				8C9360831A0FF0D300CBD215 /* ViewController.h */,
@@ -88,6 +111,8 @@
 				8C9360861A0FF0D300CBD215 /* Main.storyboard */,
 				8C9360891A0FF0D300CBD215 /* Images.xcassets */,
 				8C93608B1A0FF0D300CBD215 /* LaunchScreen.xib */,
+				8C9360A61A1004DC00CBD215 /* Controllers */,
+				8C9360A71A1004E400CBD215 /* DataSources */,
 				8C93607C1A0FF0D300CBD215 /* Supporting Files */,
 			);
 			path = "FatBachelor-07";
@@ -117,6 +142,48 @@
 				8C9360971A0FF0D300CBD215 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		8C9360A21A1004B500CBD215 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8C9360A81A10052000CBD215 /* Day.h */,
+				8C9360A91A10052000CBD215 /* Day.m */,
+				8C9360AB1A10052800CBD215 /* User.h */,
+				8C9360AC1A10052800CBD215 /* User.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		8C9360A51A1004D600CBD215 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8C9360AE1A10054A00CBD215 /* CustomTableViewCell.h */,
+				8C9360AF1A10054A00CBD215 /* CustomTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8C9360A61A1004DC00CBD215 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8C9360B11A10056E00CBD215 /* MainViewController.h */,
+				8C9360B21A10056E00CBD215 /* MainViewController.m */,
+				8C9360B41A10059600CBD215 /* TableViewController.h */,
+				8C9360B51A10059600CBD215 /* TableViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8C9360A71A1004E400CBD215 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				8C9360B71A1005B100CBD215 /* CalorieDataSource.h */,
+				8C9360B81A1005B100CBD215 /* CalorieDataSource.m */,
+				8C9360BA1A1005C000CBD215 /* BudgetDataSource.h */,
+				8C9360BB1A1005C000CBD215 /* BudgetDataSource.m */,
+			);
+			name = DataSources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +286,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C9360AD1A10052800CBD215 /* User.m in Sources */,
 				8C9360851A0FF0D300CBD215 /* ViewController.m in Sources */,
+				8C9360B91A1005B100CBD215 /* CalorieDataSource.m in Sources */,
+				8C9360B01A10054A00CBD215 /* CustomTableViewCell.m in Sources */,
 				8C9360821A0FF0D300CBD215 /* AppDelegate.m in Sources */,
+				8C9360B31A10056E00CBD215 /* MainViewController.m in Sources */,
+				8C9360AA1A10052000CBD215 /* Day.m in Sources */,
 				8C93607F1A0FF0D300CBD215 /* main.m in Sources */,
+				8C9360B61A10059600CBD215 /* TableViewController.m in Sources */,
+				8C9360BC1A1005C000CBD215 /* BudgetDataSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
