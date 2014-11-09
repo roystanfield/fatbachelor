@@ -10,4 +10,16 @@
 
 @implementation User
 
+// I don't really understand how User and Day are linked together
+
+- (id)init
+{
+    self = [super init];
+    if (self) {
+        self.days = [NSMutableArray array];
+    }
+    
+    return self;
+}
+
 @end

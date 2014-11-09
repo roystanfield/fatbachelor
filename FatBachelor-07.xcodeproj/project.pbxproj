@@ -102,17 +102,17 @@
 		8C93607B1A0FF0D300CBD215 /* FatBachelor-07 */ = {
 			isa = PBXGroup;
 			children = (
-				8C9360A21A1004B500CBD215 /* Models */,
-				8C9360A51A1004D600CBD215 /* Views */,
 				8C9360801A0FF0D300CBD215 /* AppDelegate.h */,
 				8C9360811A0FF0D300CBD215 /* AppDelegate.m */,
 				8C9360831A0FF0D300CBD215 /* ViewController.h */,
 				8C9360841A0FF0D300CBD215 /* ViewController.m */,
+				8C9360A21A1004B500CBD215 /* Models */,
+				8C9360A51A1004D600CBD215 /* Views */,
+				8C9360A61A1004DC00CBD215 /* Controllers */,
+				8C9360A71A1004E400CBD215 /* DataSources */,
 				8C9360861A0FF0D300CBD215 /* Main.storyboard */,
 				8C9360891A0FF0D300CBD215 /* Images.xcassets */,
 				8C93608B1A0FF0D300CBD215 /* LaunchScreen.xib */,
-				8C9360A61A1004DC00CBD215 /* Controllers */,
-				8C9360A71A1004E400CBD215 /* DataSources */,
 				8C93607C1A0FF0D300CBD215 /* Supporting Files */,
 			);
 			path = "FatBachelor-07";

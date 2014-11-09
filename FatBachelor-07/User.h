@@ -10,4 +10,6 @@
 
 @interface User : NSObject
 
+@property (nonatomic, strong) NSMutableArray *days;
+
 @end

@@ -10,4 +10,12 @@
 
 @interface Day : NSObject
 
+@property (nonatomic) NSInteger calories;
+@property (nonatomic) NSInteger maxCalories;
+
+@property (nonatomic) NSInteger money;
+@property (nonatomic) NSInteger maxMoney;
+
+@property (nonatomic, strong) NSString *date;
+
 @end
