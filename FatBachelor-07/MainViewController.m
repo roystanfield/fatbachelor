@@ -7,6 +7,9 @@
 //
 
 #import "MainViewController.h"
+#import "TableViewController.h"
+#import "CalorieDataSource.h"
+#import "BudgetDataSource.h"
 
 @interface MainViewController ()
 
@@ -16,8 +19,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
 
+    
+    NSString *navBarTitle = @"Fat Bachelor";
+    navBarTitle = [navBarTitle uppercaseString];
+    self.navigationItem.title = navBarTitle;
+    
+    
+    TableViewController *tableVC = [TableViewController new];
+    [self addChildViewController:tableVC];
+    
+
+}
 
 @end

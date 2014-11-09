@@ -10,4 +10,6 @@
 
 @interface TableViewController : UIViewController
 
+@property (nonatomic, strong) id<UITableViewDataSource> tableViewDataSource;
+
 @end

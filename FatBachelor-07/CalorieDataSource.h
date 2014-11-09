@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Roy Stanfield. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
-@interface CalorieDataSource : NSObject
+@interface CalorieDataSource : NSObject <UITableViewDataSource>
 
 @end
