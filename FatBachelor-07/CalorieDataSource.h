@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *cellIdentifier = @"Cell";
+
 @interface CalorieDataSource : NSObject <UITableViewDataSource>
 
 @end

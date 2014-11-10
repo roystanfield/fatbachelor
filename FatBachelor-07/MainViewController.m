@@ -13,6 +13,8 @@
 
 @interface MainViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *navigationBarLabel;
+
 @end
 
 @implementation MainViewController
@@ -23,13 +25,15 @@
     
     NSString *navBarTitle = @"Fat Bachelor";
     navBarTitle = [navBarTitle uppercaseString];
-    self.navigationItem.title = navBarTitle;
+    self.navigationBarLabel.text = navBarTitle;
     
     
     TableViewController *tableVC = [TableViewController new];
+    tableVC.tableViewDataSource = [CalorieDataSource new];
     [self addChildViewController:tableVC];
+    [self.view addSubview:tableVC.view];
+    [tableVC didMoveToParentViewController:self];
     
-
 }
 
 @end

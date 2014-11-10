@@ -12,12 +12,10 @@
 #import "Day.h"
 #import "TableViewController.h"
 
-static NSString *cellIdentifier = @"Cell";
 static int kNumberOfRows = 40;
 
 @interface CalorieDataSource ()
 
-@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic) NSInteger amountInt;
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) Day *day;
@@ -25,12 +23,6 @@ static int kNumberOfRows = 40;
 @end
 
 @implementation CalorieDataSource
-
-- (void)viewDidLoad {
-
-    [self.tableView registerClass:[CustomTableViewCell class] forCellReuseIdentifier:cellIdentifier];
-    
-}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -58,9 +50,9 @@ static int kNumberOfRows = 40;
         NSString *amountString = [NSString stringWithFormat:@"%ld", (long)self.amountInt];
         cell.textLabel.text = amountString;
     }
-    
-    cell.textLabel.font = [UIFont fontWithName:@"ProximaNovaA-Regular" size:19];
-    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+//
+//    cell.textLabel.font = [UIFont fontWithName:@"ProximaNovaA-Regular" size:19];
+//    cell.textLabel.textAlignment = NSTextAlignmentCenter;
     
     
     return cell;
@@ -82,17 +74,6 @@ static int kNumberOfRows = 40;
     currentDay.calories = currentDay.calories + buttonValue;
     
     NSLog(@"User.days array: %@", self.user.days);
-    
-//    NSString *currentCalories = [currentDay description];
-//    
-//    self.user1[@"Today"] = currentCalories;
-//    [self.user1 saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//
-//    }];
-//
-//    PFObject *testObject2 = [PFObject objectWithClassName:@"TestObject2"];
-//    testObject2[@"foo"] = @"bar";
-//    [testObject2 saveInBackground];
 }
 
 
