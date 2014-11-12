@@ -10,6 +10,7 @@
 
 @interface TableViewController : UIViewController
 
-@property (nonatomic, strong) id<UITableViewDataSource> tableViewDataSource;
+- (void)setDataSource:(id<UITableViewDataSource>)dataSource
+    andCellIdentifier:(NSString *)cellIdentifier;
 
 @end

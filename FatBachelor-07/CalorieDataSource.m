@@ -39,7 +39,7 @@ static int kNumberOfRows = 40;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     CustomTableViewCell *cell = [[CustomTableViewCell alloc] init];
-    cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    cell = [tableView dequeueReusableCellWithIdentifier:kCalorieCellIdentifier];
     
     if (indexPath.row == 0) {
         self.amountInt = 50;

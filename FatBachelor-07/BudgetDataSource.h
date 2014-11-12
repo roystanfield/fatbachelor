@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+static NSString *kBudgetCellIdentifier = @"Budget Cell";
+
 @interface BudgetDataSource : NSObject <UITableViewDataSource>
 
 @end

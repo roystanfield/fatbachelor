@@ -19,8 +19,9 @@
 
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) Day *day;
+@property (nonatomic, strong) UIView *leftView;
+@property (nonatomic, strong) UIView *rightView;
 @property (nonatomic, strong) UITableView *tableView;
-
 
 @end
 
@@ -28,32 +29,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.translatesAutoresizingMaskIntoConstraints = NO;
     
-//    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor blueColor];
+    
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
-    [self.tableView registerClass:[CustomTableViewCell class] forCellReuseIdentifier:@"Cell"];
+    self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
+    
     [self.view addSubview:self.tableView];
     
-    self.tableView.dataSource = self.tableViewDataSource;
+    NSDictionary *views = NSDictionaryOfVariableBindings(_tableView);
+    NSString *visualFormat = @"|-0-[_tableView]-0-|";
+    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:views];
+    [self.view addConstraints:constraints];
     
-//
-//    TableViewController *calorieViewController = [[TableViewController alloc] init];
-//    calorieViewController.tableViewDataSource = [[CalorieDataSource alloc] init];
-//    
-//    TableViewController *budgetViewController = [[TableViewController alloc] init];
-//    budgetViewController.tableViewDataSource = [[BudgetDataSource alloc] init];
-//    
-//    [self addChildViewController:calorieViewController];
-//    [self addChildViewController:budgetViewController];
-//    
-//    calorieViewController.view.frame = CGRectMake(0, 0, self.view.frame.size.width / 2, self.view.frame.size.height);
-//    budgetViewController.view.frame = CGRectMake(self.view.frame.size.width / 2, self.navigationController.navigationBar.frame.size.height + 20, self.view.frame.size.width / 2, self.view.frame.size.height);
-//    
-//    [self.view addSubview:calorieViewController.view];
-//    [self.view addSubview:budgetViewController.view];
-//    
-//    [calorieViewController didMoveToParentViewController:self];
-//    [budgetViewController didMoveToParentViewController:self];
+    visualFormat = @"V:|-0-[_tableView]-0-|";
+    constraints = [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
+                                                          options:0
+                                                          metrics:nil
+                                                            views:views];
+    [self.view addConstraints:constraints];
+
+    
 //    
 //    
 //    self.user = [User new];
@@ -73,15 +73,16 @@
 //    [self.user.days addObject:self.day];
 //    
 //    NSLog(@"User.days array: %@", self.user.days);
-
-    
 }
 
-- (void)setTableViewDataSource:(id<UITableViewDataSource>)tableViewDataSource
+- (void)setDataSource:(id<UITableViewDataSource>)dataSource andCellIdentifier:(NSString *)cellIdentifier
 {
-    _tableViewDataSource = tableViewDataSource;
-    self.tableView.dataSource = _tableViewDataSource;
+    self.tableView.dataSource = dataSource;
+    [self.tableView registerClass:[CustomTableViewCell class] forCellReuseIdentifier:cellIdentifier];
+    
+    [self.tableView reloadData];
 }
+
 
 
 
