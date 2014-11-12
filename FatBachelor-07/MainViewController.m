@@ -29,18 +29,17 @@
     
     
     TableViewController *calorieTableVC = [TableViewController new];
-    [calorieTableVC setDataSource:[CalorieDataSource new] andCellIdentifier:kCalorieCellIdentifier];
     [self addChildViewController:calorieTableVC];
     [self.view addSubview:calorieTableVC.view];
     [calorieTableVC didMoveToParentViewController:self];
+    [calorieTableVC setDataSource:[CalorieDataSource new] andCellIdentifier:kCalorieCellIdentifier];
     
     
     TableViewController *budgetTableVC = [TableViewController new];
-    [budgetTableVC setDataSource:[BudgetDataSource new] andCellIdentifier:kBudgetCellIdentifier];
-    budgetTableVC.view.translatesAutoresizingMaskIntoConstraints = NO;
     [self addChildViewController:budgetTableVC];
     [self.view addSubview:budgetTableVC.view];
     [budgetTableVC didMoveToParentViewController:self];
+    [budgetTableVC setDataSource:[BudgetDataSource new] andCellIdentifier:kBudgetCellIdentifier];
     
     
     
@@ -54,6 +53,7 @@
     
     // Layout the left view on screen
     UIView *calorieTableViewControllerView = calorieTableVC.view;
+    calorieTableViewControllerView.translatesAutoresizingMaskIntoConstraints = NO;
     NSDictionary *views = NSDictionaryOfVariableBindings(calorieTableViewControllerView);
     NSString *visualFormat = @"|-0-[calorieTableViewControllerView]";
     NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
@@ -82,6 +82,7 @@
     
     // Layout the left view on screen
     UIView *budgetTableViewControllerView = budgetTableVC.view;
+    budgetTableViewControllerView.translatesAutoresizingMaskIntoConstraints = NO;
     budgetTableViewControllerView.backgroundColor = [UIColor redColor];
     views = NSDictionaryOfVariableBindings(budgetTableViewControllerView);
     visualFormat = @"[budgetTableViewControllerView]-0-|";

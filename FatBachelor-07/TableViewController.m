@@ -22,6 +22,7 @@
 @property (nonatomic, strong) UIView *leftView;
 @property (nonatomic, strong) UIView *rightView;
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) id<UITableViewDataSource> dataSource;
 
 @end
 
@@ -30,7 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
-    
     self.view.backgroundColor = [UIColor blueColor];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
@@ -77,7 +77,8 @@
 
 - (void)setDataSource:(id<UITableViewDataSource>)dataSource andCellIdentifier:(NSString *)cellIdentifier
 {
-    self.tableView.dataSource = dataSource;
+    self.dataSource = dataSource;
+    self.tableView.dataSource = self.dataSource;
     [self.tableView registerClass:[CustomTableViewCell class] forCellReuseIdentifier:cellIdentifier];
     
     [self.tableView reloadData];

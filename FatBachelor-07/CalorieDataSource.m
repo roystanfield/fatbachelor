@@ -42,6 +42,7 @@ static int kNumberOfRows = 40;
     cell = [tableView dequeueReusableCellWithIdentifier:kCalorieCellIdentifier];
     
     if (indexPath.row == 0) {
+        NSLog(@"I'm running.");
         self.amountInt = 50;
         NSString *amountString = [NSString stringWithFormat:@"%ld", (long)self.amountInt];
         cell.textLabel.text = amountString;
