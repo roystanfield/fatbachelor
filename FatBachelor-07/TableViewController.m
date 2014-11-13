@@ -77,6 +77,10 @@
 
 - (void)setDataSource:(id<UITableViewDataSource>)dataSource andCellIdentifier:(NSString *)cellIdentifier
 {
+    if ([self isViewLoaded] == NO) {
+        [self view];
+    }
+    
     self.dataSource = dataSource;
     self.tableView.dataSource = self.dataSource;
     [self.tableView registerClass:[CustomTableViewCell class] forCellReuseIdentifier:cellIdentifier];

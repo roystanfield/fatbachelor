@@ -51,9 +51,9 @@ static int kNumberOfRows = 40;
         NSString *amountString = [NSString stringWithFormat:@"%ld", (long)self.amountInt];
         cell.textLabel.text = amountString;
     }
-//
+
 //    cell.textLabel.font = [UIFont fontWithName:@"ProximaNovaA-Regular" size:19];
-//    cell.textLabel.textAlignment = NSTextAlignmentCenter;
+    cell.textLabel.textAlignment = NSTextAlignmentCenter;
     
     
     return cell;

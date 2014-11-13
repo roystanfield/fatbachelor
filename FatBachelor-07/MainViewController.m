@@ -28,6 +28,9 @@
     self.navigationBarLabel.text = navBarTitle;
     
     
+
+    
+    
     TableViewController *calorieTableVC = [TableViewController new];
     [self addChildViewController:calorieTableVC];
     [self.view addSubview:calorieTableVC.view];
@@ -44,16 +47,10 @@
     
     
     
-    
-    
-    
-    
-    
-    
-    
     // Layout the left view on screen
     UIView *calorieTableViewControllerView = calorieTableVC.view;
     calorieTableViewControllerView.translatesAutoresizingMaskIntoConstraints = NO;
+    
     NSDictionary *views = NSDictionaryOfVariableBindings(calorieTableViewControllerView);
     NSString *visualFormat = @"|-0-[calorieTableViewControllerView]";
     NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
@@ -78,12 +75,13 @@
                                                             views:views];
     [self.view addConstraints:constraints];
     
-
     
-    // Layout the left view on screen
+    
+    // Layout the right view on screen
     UIView *budgetTableViewControllerView = budgetTableVC.view;
     budgetTableViewControllerView.translatesAutoresizingMaskIntoConstraints = NO;
     budgetTableViewControllerView.backgroundColor = [UIColor redColor];
+    
     views = NSDictionaryOfVariableBindings(budgetTableViewControllerView);
     visualFormat = @"[budgetTableViewControllerView]-0-|";
     constraints = [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
