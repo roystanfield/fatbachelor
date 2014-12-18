@@ -42,7 +42,6 @@ static int kNumberOfRows = 40;
     cell = [tableView dequeueReusableCellWithIdentifier:kCalorieCellIdentifier];
     
     if (indexPath.row == 0) {
-        NSLog(@"I'm running.");
         self.amountInt = 50;
         NSString *amountString = [NSString stringWithFormat:@"%ld", (long)self.amountInt];
         cell.textLabel.text = amountString;
@@ -59,23 +58,6 @@ static int kNumberOfRows = 40;
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    long buttonValue = 0;
-    
-    if (indexPath.row == 0) {
-        buttonValue = indexPath.row + 50;
-    } else {
-        buttonValue = indexPath.row * 50 + 50;
-    }
-    
-    NSLog(@"Button Value: %ld", buttonValue);
-    
-    Day *currentDay = [self.user.days lastObject];
-    currentDay.calories = currentDay.calories + buttonValue;
-    
-    NSLog(@"User.days array: %@", self.user.days);
-}
 
 
 @end

@@ -75,6 +75,8 @@
 //    NSLog(@"User.days array: %@", self.user.days);
 }
 
+
+
 - (void)setDataSource:(id<UITableViewDataSource>)dataSource andCellIdentifier:(NSString *)cellIdentifier
 {
     if ([self isViewLoaded] == NO) {
@@ -87,6 +89,27 @@
     
     [self.tableView reloadData];
 }
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    long buttonValue = 0;
+    
+    if (indexPath.row == 0) {
+        buttonValue = indexPath.row + 50;
+    } else {
+        buttonValue = indexPath.row * 50 + 50;
+    }
+    
+    NSLog(@"Button Value: %ld", buttonValue);
+    
+    Day *currentDay = [self.user.days lastObject];
+    currentDay.calories = currentDay.calories + buttonValue;
+    
+    NSLog(@"User.days array: %@", self.user.days);
+}
+
+
 
 
 

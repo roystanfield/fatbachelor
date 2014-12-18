@@ -28,19 +28,49 @@
     self.navigationBarLabel.text = navBarTitle;
     
     
+    // Layout a main view
+    UIView *containerView = [[UIView alloc] initWithFrame:CGRectZero];
+    containerView.backgroundColor = [UIColor lightGrayColor];
+    [self.view addSubview:containerView];
+    
+    containerView.translatesAutoresizingMaskIntoConstraints = NO;
+
+    NSDictionary *views = NSDictionaryOfVariableBindings(containerView);
+    NSString *visualFormat = @"|-0-[containerView]-0-|";
+    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:views];
+    [self.view addConstraints:constraints];
+    
+    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:containerView
+                                                                       attribute:NSLayoutAttributeWidth
+                                                                       relatedBy:NSLayoutRelationEqual
+                                                                          toItem:self.view
+                                                                       attribute:NSLayoutAttributeWidth
+                                                                      multiplier:1
+                                                                        constant:0.0];
+    [self.view addConstraint:widthConstraint];
+    
+    visualFormat = @"V:|-0-[containerView]-0-|";
+    constraints = [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
+                                                          options:0
+                                                          metrics:nil
+                                                            views:views];
+    [self.view addConstraints:constraints];
 
     
     
     TableViewController *calorieTableVC = [TableViewController new];
     [self addChildViewController:calorieTableVC];
-    [self.view addSubview:calorieTableVC.view];
+    [containerView addSubview:calorieTableVC.view];
     [calorieTableVC didMoveToParentViewController:self];
     [calorieTableVC setDataSource:[CalorieDataSource new] andCellIdentifier:kCalorieCellIdentifier];
     
     
     TableViewController *budgetTableVC = [TableViewController new];
     [self addChildViewController:budgetTableVC];
-    [self.view addSubview:budgetTableVC.view];
+    [containerView addSubview:budgetTableVC.view];
     [budgetTableVC didMoveToParentViewController:self];
     [budgetTableVC setDataSource:[BudgetDataSource new] andCellIdentifier:kBudgetCellIdentifier];
     
@@ -51,15 +81,15 @@
     UIView *calorieTableViewControllerView = calorieTableVC.view;
     calorieTableViewControllerView.translatesAutoresizingMaskIntoConstraints = NO;
     
-    NSDictionary *views = NSDictionaryOfVariableBindings(calorieTableViewControllerView);
-    NSString *visualFormat = @"|-0-[calorieTableViewControllerView]";
-    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
+    views = NSDictionaryOfVariableBindings(calorieTableViewControllerView);
+    visualFormat = @"|-0-[calorieTableViewControllerView]";
+    constraints = [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                                    options:0
                                                                    metrics:nil
                                                                      views:views];
     [self.view addConstraints:constraints];
     
-    NSLayoutConstraint *widthConstraint = [NSLayoutConstraint constraintWithItem:calorieTableViewControllerView
+    widthConstraint = [NSLayoutConstraint constraintWithItem:calorieTableViewControllerView
                                                                        attribute:NSLayoutAttributeWidth
                                                                        relatedBy:NSLayoutRelationEqual
                                                                           toItem:self.view
@@ -95,17 +125,19 @@
                                                    relatedBy:NSLayoutRelationEqual
                                                       toItem:self.view
                                                    attribute:NSLayoutAttributeWidth
-                                                  multiplier:0.5
+                                                  multiplier:0.499
                                                     constant:0.0];
     [self.view addConstraint:widthConstraint];
     
-    visualFormat = @"V:|-0-[budgetTableViewControllerView]-0-|";
+    visualFormat = @"V:|-64-[budgetTableViewControllerView]-0-|";
     constraints = [NSLayoutConstraint constraintsWithVisualFormat:visualFormat
                                                           options:0
                                                           metrics:nil
                                                             views:views];
+    
     [self.view addConstraints:constraints];
     
 }
+
 
 @end
