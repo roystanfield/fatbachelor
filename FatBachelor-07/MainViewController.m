@@ -21,12 +21,56 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     
     NSString *navBarTitle = @"Fat Bachelor";
     navBarTitle = [navBarTitle uppercaseString];
     self.navigationBarLabel.text = navBarTitle;
     
+    
+    
+    
+    
+    
+    
+    
+    
+    // Create user, day and maxCalories
+    self.user = [User new];
+    self.day = [Day new];
+    self.day.maxCalories = 2000;
+    
+    
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    
+    NSDate *todaysDate = [NSDate date];
+    
+    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    [dateFormatter setLocale:usLocale];
+    
+    self.day.date = [dateFormatter stringFromDate:todaysDate];
+    [self.user.days addObject:self.day];
+    NSLog(@"%@", self.day.date);
+    //
+    //    NSLog(@"User.days array: %@", self.user.days);
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     
     // Layout a main view
     UIView *containerView = [[UIView alloc] initWithFrame:CGRectZero];

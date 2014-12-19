@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Day.h"
+#import "User.h"
 
 @interface MainViewController : UIViewController
+
+@property (nonatomic, strong) User *user;
+@property (nonatomic, strong) Day *day;
 
 @end

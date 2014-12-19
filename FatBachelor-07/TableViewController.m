@@ -9,16 +9,12 @@
 #import "TableViewController.h"
 #import "MainViewController.h"
 #import "CustomTableViewCell.h"
-#import "User.h"
-#import "Day.h"
 #import "CalorieDataSource.h"
 #import "BudgetDataSource.h"
 
 
 @interface TableViewController () <UITableViewDelegate>
 
-@property (nonatomic, strong) User *user;
-@property (nonatomic, strong) Day *day;
 @property (nonatomic, strong) UIView *leftView;
 @property (nonatomic, strong) UIView *rightView;
 @property (nonatomic, strong) UITableView *tableView;
@@ -31,15 +27,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.tableView.delegate = self;
-    
     self.view.translatesAutoresizingMaskIntoConstraints = NO;
     self.view.backgroundColor = [UIColor blueColor];
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.bounds];
     self.tableView.translatesAutoresizingMaskIntoConstraints = NO;
     
+    self.tableView.delegate = self;
     [self.view addSubview:self.tableView];
+    
+    
+    
+    
     
     NSDictionary *views = NSDictionaryOfVariableBindings(_tableView);
     NSString *visualFormat = @"|-0-[_tableView]-0-|";
@@ -56,26 +55,6 @@
                                                             views:views];
     [self.view addConstraints:constraints];
 
-    
-//    
-//    
-//    self.user = [User new];
-//    self.day = [Day new];
-//    self.day.maxCalories = 2000;
-//    
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-//    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-//    
-//    NSDate *todaysDate = [NSDate date];
-//    
-//    NSLocale *usLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
-//    [dateFormatter setLocale:usLocale];
-//    
-//    self.day.date = [dateFormatter stringFromDate:todaysDate];
-//    [self.user.days addObject:self.day];
-//    
-//    NSLog(@"User.days array: %@", self.user.days);
 }
 
 
@@ -106,10 +85,19 @@
     
     NSLog(@"Button Value: %ld", buttonValue);
     
-    Day *currentDay = [self.user.days lastObject];
-    currentDay.calories = currentDay.calories + buttonValue;
+// Here's the issue. I've moved *user and *day up to the MainViewController class.
+// Having it in this class meant that everything in viewDidLoad was running twice.
+// Now I'm uncertain about how to refer to properties that are intializied in MainViewController's
+// viewDidLoad.
     
-    NSLog(@"User.days array: %@", self.user.days);
+    Day *currentDay = [self.user.days lastObject];
+    
+//    
+//    currentDay.calories = currentDay.calories + buttonValue;
+//
+//    
+//    NSLog(@"Calories: %ld", currentDay.calories);
+//    NSLog(@"User.days array: %@", self.user.days);
 }
 
 
